@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap');
+
+* {
+	box-sizing: border-box;
+}
+
+:root {
+	--text-color: #ffffff;
+	--primary-color: #00C1C9;
+	--secondary-color: #11466F;
+	--backg-color: #030F21;
+	--menu-btn-gradient: linear-gradient(
+	  0deg,
+	  hsl(216deg 83% 7%) 0%,
+	  hsl(210deg 68% 15%) 29%,
+	  hsl(207deg 71% 23%) 38%,
+	  hsl(196deg 100% 29%) 44%,
+	  hsl(187deg 100% 37%) 48%,
+	  hsl(187deg 100% 37%) 52%,
+	  hsl(196deg 100% 29%) 56%,
+	  hsl(207deg 71% 23%) 62%,
+	  hsl(210deg 68% 15%) 71%,
+	  hsl(216deg 83% 7%) 100%
+	);
+}
+
+body {
+	font-family: 'Chivo Mono', monospace;
+	font-weight: 300;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	background-color: var(--backg-color);
+	color: var(--text-color);
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 90%;
+	padding: 0;
+	margin: auto;
+}
+
+#mainhead {
+	height: 100px;
+	width: 100%;
+	padding: 2px 3px;
+	margin: 0;
+	text-align: right;
+	background-color: var(--primary-color);
+	color: var(--backg-color);
+	text-shadow: 3px 1px 5px black;
+}
+
+#mainnav {
+	height: 50px;
+	width: 100%;
+	background-color: var(--secondary-color);
+}
+#mainnav ul{
+	list-style: none;
+	text-indent: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 0;
+	margin: auto;
+}
+#mainnav li{
+	text-indent: none;
+	display: inline-block;
+	margin: 10px 10px;
+}
+.menuitem {
+	display: inline-block;
+	height: 2rem;
+	width: 120px;
+	text-align: center;
+	padding: 3px 0px;
+	text-decoration: none;
+	background: var(--menu-btn-gradient);
+	color: var(--text-color);
+	text-shadow: 2px 2px 4px black;
+	border-radius: 10px;
+	transition: all 0.5s;
+}
+.menuitem:hover {
+	color: var(--primary-color);
+	filter: brightness(120%);
+}
+
+
+
+.dropdown {
+	position: relative;
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+}
+.dropdown-content {
+	animation: flipDown 300ms ease-in-out forwards;
+	transform-origin: top center;
+
+	display: none;
+	position: absolute;
+	left: -10px;
+	top: 2rem;
+	background: var(--secondary-color);
+	box-shadow: 2px 2px 4px black;
+	border-radius: 0px 0px 10px 10px;
+	z-index: 2;
+}
+.dropdown-content ul{
+	display: flex;
+	flex-direction: column !important;
+	align-items: center;
+	justify-content: center;
+}
+
+@keyframes flipDown {
+	0% {
+		transform: rotateX(-90deg);
+	}
+	70% {
+      transform: rotateX(20deg);
+    }
+    100% {
+      transform: rotateX(0deg);
+    }
+}
+
+#mainfoot {
+	height: 50px;
+	width: 100%;
+	padding: 2px 3px;
+	margin: 0;
+	text-align: center;
+	background-color: var(--primary-color);
+	color: var(--backg-color);
+}
+#mainfoot p{
+	font-size: 0.8rem;
+}
